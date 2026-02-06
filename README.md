@@ -76,3 +76,26 @@ Clone the repository:
 ```bash
 git clone https://github.com/SaptantaDeb20/MindMapr.git
 cd MindMapr
+
+#Install dependencies for both frontend and backend:
+cd frontend
+npm install
+
+cd ../backend
+npm install
+
+#Create a .env file in the backend directory:
+GEMINI_API_KEY=your_api_key_here
+
+#Run the backend:
+cd backend
+node server.js
+
+#Run the frontend:
+cd frontend
+npm run dev
+
+#Open the application at:
+http://localhost:3000
+
+

@@ -1,118 +1,78 @@
 # MindMapr
 
-🧠 MindMapr – Visual ML Concept Mapping with Gemini
-💡 Inspiration
+MindMapr is a web application that transforms raw machine learning notes into clear, visual concept maps. It helps learners understand how core ML concepts relate to each other rather than memorizing isolated definitions.
 
-Many computer science and machine learning students struggle not because concepts are difficult, but because relationships between concepts are unclear.
+The application uses Google Gemini as a reasoning engine to extract key concepts from free-form text and infer prerequisite relationships between them. These relationships are visualized as an interactive concept graph.
 
-Topics like bias, variance, overfitting, and regularization are often memorized independently instead of being understood as a connected system.
+---
 
-MindMapr was built to solve this by turning raw ML notes into a structured visual concept map.
+## Problem
 
+Machine learning concepts such as bias, variance, overfitting, and regularization are often taught independently. This makes it difficult for learners to understand how these ideas connect and build upon each other, leading to shallow understanding and confusion.
 
-🚀 What it does
+---
 
-MindMapr takes unstructured machine learning notes and:
+## Solution
 
-Extracts key ML concepts using Google Gemini
+MindMapr addresses this problem by:
+- Extracting meaningful machine learning concepts from raw notes
+- Identifying conceptual dependencies between those concepts
+- Rendering an interactive visual graph that shows how ideas are connected
 
-Identifies prerequisite and dependency relationships
+This allows learners to build stronger mental models and understand machine learning more intuitively.
 
-Displays everything as an interactive visual graph
+---
 
-Uses color-coding to clearly distinguish:
+## How It Works
 
-🔴 Problems (Bias, Variance, Overfitting)
+1. The user pastes machine learning notes into the application
+2. Google Gemini extracts key conceptual terms from the text
+3. A pruning and validation layer filters noisy or irrelevant concepts
+4. Gemini infers prerequisite or causal relationships between concepts
+5. The frontend visualizes the result as an interactive concept graph
 
-🟡 Derived concepts (High bias, High variance)
+---
 
-🟢 Solutions (Regularization, L1, L2)
+## Gemini Integration
 
+Google Gemini is central to the application. It is used for:
+- Semantic concept extraction from unstructured text
+- Reasoning about relationships between machine learning concepts
 
-How we built it
+Carefully designed prompts and response-cleaning logic ensure that the output is structured, reliable, and suitable for educational visualization.
 
-Frontend: Next.js (React + TypeScript)
+---
 
-Backend: Node.js + Express
+## Tech Stack
 
-AI: Google Gemini API
+### Frontend
+- Next.js (React)
+- TypeScript
+- React Flow (graph visualization)
 
-Visualization: React Flow
+### Backend
+- Node.js
+- Express.js
 
-User Notes → Gemini → Concept Extraction
-           → Pruning & Validation
-           → Dependency Detection
-           → Visual Graph Rendering
+### AI / APIs
+- Google Gemini API
 
+### Tools
+- Git
+- GitHub
+- VS Code
 
-Challenges we ran into
+---
 
-AI output noise: Gemini can return extra concepts, so we built a pruning layer to keep graphs concise.
+## Running Locally
 
-API rate limits: The Gemini free tier has strict quotas, so we implemented graceful fallbacks to ensure the app never breaks.
+### Prerequisites
+- Node.js (v18 or later)
+- A Google Gemini API key
 
-Visual clarity: Balancing enough detail without cluttering the graph required multiple iterations.
+### Setup
 
-
-Challenges we ran into
-
-AI output noise: Gemini can return extra concepts, so we built a pruning layer to keep graphs concise.
-
-API rate limits: The Gemini free tier has strict quotas, so we implemented graceful fallbacks to ensure the app never breaks.
-
-Visual clarity: Balancing enough detail without cluttering the graph required multiple iterations.
-
-
-Challenges we ran into
-
-AI output noise: Gemini can return extra concepts, so we built a pruning layer to keep graphs concise.
-
-API rate limits: The Gemini free tier has strict quotas, so we implemented graceful fallbacks to ensure the app never breaks.
-
-Visual clarity: Balancing enough detail without cluttering the graph required multiple iterations.
-
-
-
-Challenges we ran into
-
-AI output noise: Gemini can return extra concepts, so we built a pruning layer to keep graphs concise.
-
-API rate limits: The Gemini free tier has strict quotas, so we implemented graceful fallbacks to ensure the app never breaks.
-
-Visual clarity: Balancing enough detail without cluttering the graph required multiple iterations.
-
-
-Try it out
-
-Paste machine learning notes into the app
-
-Click Extract Concepts
-
-Explore the generated concept graph
-
-
-
-Built with Gemini
-
-MindMapr uses Google Gemini to:
-
-Understand ML terminology
-
-Extract conceptual meaning
-
-Infer prerequisite relationships
-
-Gemini is central to the app’s intelligence, not just an add-on.
-
-
-Built with Gemini
-
-MindMapr uses Google Gemini to:
-
-Understand ML terminology
-
-Extract conceptual meaning
-
-Infer prerequisite relationships
-
-Gemini is central to the app’s intelligence, not just an add-on.
+Clone the repository:
+```bash
+git clone https://github.com/SaptantaDeb20/MindMapr.git
+cd MindMapr
